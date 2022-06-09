@@ -1,0 +1,10 @@
+slug: brand-one
+indexHtmlVariables:
+  pageTitlePrefix: "Brand One Site"
+lessVariableS:
+  "@brand-primary-color": "#000"
+  "@brand-secondary-color": "#4444"
+jsVariables:
+  CODIKS_BRAND_SLUG: "brand-one"
+  CODIKS_BRAND_LOGO: "https://umenu.mx/logo-green.png"
+  CODIKS_BRAND_SUPPORTED_LANGUAGES: ["es-MX"]

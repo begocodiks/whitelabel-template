@@ -1,0 +1,131 @@
+#enums
+constants:
+  language: &Language ['en', 'es-MX']
+  environment: &Environment ['dev', 'qa', 'staging', 'production']
+
+# Site config
+collections:
+  - name: siteConfig
+    slug: '{{slug}}' # filename template
+    identifier_field: slug
+    format: yaml
+    fields:
+      - { label: 'Build name', name: slug, widget: string }
+      # Html Variables
+      - label: 'HTML Variables'
+        name: indexHtmlVariables
+        widget: object
+        fields: {
+          - {
+              label: 'Page title Prefix',
+              name: pageTitlePrefix,
+              widget: string,
+              required: false,
+            }
+          - {
+              label: 'Font Src',
+              name: fontSrc,
+              widget: string,
+              required: false,
+            }
+            - {
+                label: 'Base Href',
+                name: baseHref,
+                widget: string,
+                required: false,
+              }
+            - {
+                label: 'Additional Headers',
+                name: additionalHeaders,
+                widget: text,
+                required: false
+              }
+        }
+      # LESs Variables
+      - label: 'LESS variables'
+        name: lessVariables
+        widget: object
+        fields:
+          - {
+              label: 'Font Family',
+              name: '@brand-font-family',
+              widget: string,
+              required: false
+            }
+          - {
+              label: 'Primary Color',
+              name: '@brand-primary-color',
+              widget: string,
+              required: false
+            }
+          - {
+              label: 'Secondary Color',
+              name: '@brand-secondary-color',
+              widgeT: string,
+              required: false
+            }
+      #JS Variables
+      - label: 'JS Variables'
+        name: jsVariables
+        widget: object
+        fields:
+          - {
+              label: 'Brand slug',
+              name: CODIKS_BRAND_SLUG,
+              widget: string
+            }
+          - {
+              label: 'Logo Src',
+              name: CODIKS_BRAND_LOGO,
+              widget: string,
+              required: true
+            }
+          - {
+              label: 'Languages',
+              name: CODIKS_BRAND_SUPPORTED_LANGUAGES,
+              widget: select,
+              multiple: true,
+              options: *Language,
+              default: ['es-MX']
+          }
+      #API Servers
+      - label: 'Default API Servers'
+        name: defaultApiServers
+        widget: object
+        fields:
+          - {
+              label: 'Default Api Server QA',
+              name: qa,
+              widget: string,
+              required: false,
+              default: 'https://myqaapi.com'
+            }
+          - {
+              label: 'Default Api Server Staging',
+              name: staging,
+              widget: string,
+              required: false,
+              default: 'https://mystagingapi.com'
+            }
+          - {
+              label: 'Default Api Server Production',
+              name: qa,
+              widget: string,
+              required: false,
+              default: 'https://myprodapi.com'
+            }
+  # Global configuration
+  - name: globalConfig
+    labe: 'GLobal Config'
+    folder: 'static/global-config'
+    create: false
+    identifier_field: title
+    slug: 'Global config'
+    format: yaml
+    fields:
+      - {
+          label: 'Title',
+          name: title,
+          widget: hidden,
+          default: 'Global Config'
+        }

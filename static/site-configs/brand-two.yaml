@@ -1,0 +1,10 @@
+slug: brand-two
+indexHtmlVariables:
+  pageTitlePrefix: "Brand Two Site"
+lessVariableS:
+  "@brand-primary-color": "#1f1f1f"
+  "@brand-secondary-color": "#d6d6d6"
+jsVariables:
+  CODIKS_BRAND_SLUG: "brand-two"
+  CODIKS_BRAND_LOGO: "https://static.vecteezy.com/system/resources/thumbnails/007/996/014/small/mascot-logo-donut-carrying-two-spatulas-for-restaurant-branding-vector.jpg"
+  CODIKS_BRAND_SUPPORTED_LANGUAGES: ["es-MX"]
